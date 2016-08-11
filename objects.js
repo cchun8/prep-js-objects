@@ -6,7 +6,12 @@
             - Add a property named `size` and set it to a number value between `0` and `20`.
             - Add a property named `contents` and set it to be an empty array.
  */
-
+var plainBox={};
+plainBox.color="teal";
+plainBox.size=7;
+plainBox.contents=[];
+console.log(plainBox);
+console.log(plainBox.size);
 
 /*
     # An object with properties declared line by line
@@ -22,8 +27,17 @@
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
  */
-
-
+var stockCar={
+    model: "Ford",
+    year: 2015,
+    automaticTransmission: true,
+    driver: null,
+    passengers: []
+};
+console.log(stockCar.year);
+console.log(stockCar.model);
+console.log(stockCar.driver);
+console.log(stockCar.passengers);
 /*
     Add new property inside a function
 
@@ -37,8 +51,13 @@
 
         Finally, invoke your new function while passing in the `plainPerson` object and additional agrument values, then store the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just the value at `name`, and just the value at `age`.
  */
-
-
+var plainPerson={};
+function buildPerson(person, nameString, age){
+    person.name=nameString;
+    person.age=age;
+    return person;
+}
+console.log(buildPerson(plainPerson, "Claire", 25));
 /*
     # Display values of objects that are inside an array
         Declare a new variable named `arrayOfObjects` and set it to be [this array of objects](https://gist.github.com/sgnl/958adf99007329d2e4ff).
@@ -61,8 +80,67 @@
             =====
             ...
  */
-
-
+var arrayOfObjects=[
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
+function printProcessedOrders(orders){
+    for(var i=0; i<orders.length; i++){
+        console.log("=====");
+        console.log("id: " + orders[i].id);
+        console.log("Purchase date: " + orders[i].date);
+        console.log("Purchase total: " + orders[i].total);
+    }
+}
+console.log(printProcessedOrders(arrayOfObjects));
 /*
     # Addition with an object
         Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
